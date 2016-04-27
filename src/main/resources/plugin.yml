@@ -1,0 +1,16 @@
+name: TestServCore
+version: ${project.version}
+main: me.boomboompower.testserv.TestServCore
+author: boomboompower
+description: Made on IntelliJ
+website: boomboompower.weebly.com
+commands:
+  ahelp:
+    usage: /<command>
+    description: Help page
+  aban:
+    usage: /<command> <player>
+    description: Ban players
+  remove:
+    usage: /<command> <entity>
+    desription: Remove entities
