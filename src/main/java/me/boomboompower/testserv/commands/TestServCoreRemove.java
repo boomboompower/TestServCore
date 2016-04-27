@@ -8,7 +8,7 @@ package me.boomboompower.testserv.commands;
 /**
 * Please note, this is in BETA stages, and any
 * help given would be greatly appreciated 
-/*
+*/
 
 import me.boomboompower.testserv.TestServCore;
 
