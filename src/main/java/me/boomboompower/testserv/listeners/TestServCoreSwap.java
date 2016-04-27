@@ -5,6 +5,8 @@ package me.boomboompower.testserv.listeners;
 * by boomboompower 26/04/2016
 */
 
+import me.boomboompower.testserv.TestServCore;
+
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -19,8 +21,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.ArrayList;
-
-import me.boomboompower.testserv.TestServCore;
 
 import static org.bukkit.Material.*;
 import static org.bukkit.GameMode.*;
