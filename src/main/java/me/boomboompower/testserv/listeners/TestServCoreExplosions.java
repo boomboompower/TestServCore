@@ -7,11 +7,12 @@ package me.boomboompower.testserv.listeners;
 
 import me.boomboompower.testserv.TestServCore;
 
-import org.bukkit.Bukkit;
+import org.bukkit.event.Listener;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
-import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityExplodeEvent;
+
+import static me.boomboompower.testserv.utils.Register.*;
 
 public class TestServCoreExplosions implements Listener {
 
@@ -20,7 +21,7 @@ public class TestServCoreExplosions implements Listener {
     public TestServCoreExplosions(TestServCore testServCore) {
         this.testServCore = testServCore;
 
-        Bukkit.getPluginManager().registerEvents(this, testServCore);
+        registerEvents(this);
     }
 
     @EventHandler(priority = EventPriority.HIGH)
