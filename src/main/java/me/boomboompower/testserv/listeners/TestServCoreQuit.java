@@ -2,17 +2,17 @@ package me.boomboompower.testserv.listeners;
 
 /*
 * Made for TestServ Core
-* by boomboompower 25/04/2016
+* by boomboompower 26/04/2016
 */
 
 import me.boomboompower.testserv.TestServCore;
 
-import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
 
-import static me.boomboompower.testserv.utils.Utils.translate;
+import static me.boomboompower.testserv.utils.Register.registerEvents;
+import static me.boomboompower.testserv.utils.Utils.*;
 
 public class TestServCoreQuit implements Listener {
 
@@ -21,7 +21,7 @@ public class TestServCoreQuit implements Listener {
     public TestServCoreQuit(TestServCore testServCore) {
         this.testServCore = testServCore;
 
-        Bukkit.getPluginManager().registerEvents(this, testServCore);
+        registerEvents(this);
     }
 
     @EventHandler
