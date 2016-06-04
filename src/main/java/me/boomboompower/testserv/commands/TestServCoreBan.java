@@ -6,12 +6,14 @@ package me.boomboompower.testserv.commands;
 */
 
 import me.boomboompower.testserv.TestServCore;
+
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import static me.boomboompower.testserv.utils.Register.*;
 import static me.boomboompower.testserv.utils.Utils.*;
 
 public class TestServCoreBan implements CommandExecutor {
@@ -24,9 +26,10 @@ public class TestServCoreBan implements CommandExecutor {
     public TestServCoreBan(TestServCore testServCore) {
         this.testServCore = testServCore;
 
-        testServCore.getCommand(command).setExecutor(this);
+        registerCommands(command, this);
     }
 
+    @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         if (cmd.getName().equalsIgnoreCase(command)) {
             if (sender instanceof Player) {
@@ -44,7 +47,7 @@ public class TestServCoreBan implements CommandExecutor {
                                 p.setBanned(true);
                                 p.kickPlayer(translate("&4Banned by &c&l" + p.getName() + "&4. Submit an appeal at &b" + URL + " &4!"));
                             } else {
-                                sendToPlayer(p, "&cCouldn\'t find &4" + args[0].toString() + "&c! Are they online?");
+                                sendToPlayer(p, "&cCould not find &4" + args[0] + "&c! Are they online?");
                             }
                         }
                     }
@@ -60,7 +63,7 @@ public class TestServCoreBan implements CommandExecutor {
                             p.setBanned(true);
                             p.kickPlayer(translate("&4&lBanned by console!"));
                         } else {
-                            sendToConsole("&cCouldn\'t find &4" + args[0].toString() + "&c! Are they online?");
+                            sendToConsole("&cCouldn\'t find &4" + args[0] + "&c! Are they online?");
                         }
                     }
                 }
