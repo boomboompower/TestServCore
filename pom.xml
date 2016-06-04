@@ -53,6 +53,16 @@
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
+
+        <repository>
+            <id>dmulloy2-repo</id>
+            <url>http://repo.dmulloy2.net/content/groups/public/</url>
+        </repository>
+
+        <repository>
+            <id>boomboompower-repo</id>
+            <url>file://C:/Users/Julian/.m2/repository</url>
+        </repository>
     </repositories>
     <dependencies>
         <!--Spigot API-->
@@ -60,6 +70,21 @@
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
             <version>1.9.2-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- ProtocolLib -->
+        <dependency>
+            <groupId>com.comphenix.protocol</groupId>
+            <artifactId>ProtocolLib</artifactId>
+            <version>3.6.5</version>
+        </dependency>
+
+        <!-- My Repo -->
+        <dependency>
+            <groupId>me.boomboompower</groupId>
+            <artifactId>server</artifactId>
+            <version>1.9.4</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
