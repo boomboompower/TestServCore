@@ -6,6 +6,7 @@ package me.boomboompower.testserv.commands;
 */
 
 import me.boomboompower.testserv.TestServCore;
+
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -13,9 +14,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import static me.boomboompower.testserv.utils.Register.registerCommands;
-import static me.boomboompower.testserv.utils.Utils.getArguments;
-import static me.boomboompower.testserv.utils.Utils.sendToConsole;
-import static me.boomboompower.testserv.utils.Utils.sendToPlayer;
+import static me.boomboompower.testserv.utils.Utils.*;
 
 public class TestServCoreSudo implements CommandExecutor {
 
