@@ -6,46 +6,53 @@ package me.boomboompower.testserv.listeners;
 */
 
 import me.boomboompower.testserv.TestServCore;
-
-import org.bukkit.Bukkit;
+import org.bukkit.GameMode;
+import org.bukkit.entity.Enderman;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.event.entity.EntityChangeBlockEvent;
 
 import java.util.ArrayList;
 
-import static org.bukkit.GameMode.*;
+import static me.boomboompower.testserv.utils.Register.registerEvents;
 import static me.boomboompower.testserv.utils.Utils.*;
 
 public class TestServCoreBlockHandler implements Listener {
 
     private TestServCore testServCore;
 
-    private ArrayList listBreakOne;
-    private ArrayList listBreakTwo;
+    private ArrayList<String> listBreakOne;
+    private ArrayList<String> listBreakTwo;
 
-    private ArrayList listPlaceOne;
-    private ArrayList listPlaceTwo;
+    private ArrayList<String> listPlaceOne;
+    private ArrayList<String> listPlaceTwo;
 
     public TestServCoreBlockHandler(TestServCore testServCore) {
         this.testServCore = testServCore;
 
-        // Make the ArrayLists!
-        this.listBreakOne = new ArrayList();
-        this.listPlaceOne = new ArrayList();
-        this.listBreakTwo = new ArrayList();
-        this.listPlaceTwo = new ArrayList();
+        this.listBreakOne = new ArrayList<String>();
+        this.listPlaceOne = new ArrayList<String>();
+        this.listBreakTwo = new ArrayList<String>();
+        this.listPlaceTwo = new ArrayList<String>();
 
-        Bukkit.getPluginManager().registerEvents(this, testServCore);
+        registerEvents(this);
+    }
+
+    @EventHandler(priority = EventPriority.HIGH)
+    private void onEntityChangeBlock(EntityChangeBlockEvent e) {
+        if (e.getEntity() instanceof Enderman) {
+            e.setCancelled(true);
+        }
     }
 
     @EventHandler(priority = EventPriority.HIGH)
     private void onBlockBreak(BlockBreakEvent e) {
         Player p = e.getPlayer();
-        if (p.getGameMode() == CREATIVE) return;
+        if (p.getGameMode() == GameMode.CREATIVE) return;
         if (!permissionCheck(p, "testServ.Break")) {
             e.setCancelled(true);
             if (listBreakOne.contains(p.getName())) {
@@ -65,7 +72,7 @@ public class TestServCoreBlockHandler implements Listener {
     @EventHandler(priority = EventPriority.HIGH)
     private void onBlockPlace(BlockPlaceEvent e) {
         Player p = e.getPlayer();
-        if (p.getGameMode() == CREATIVE) return;
+        if (p.getGameMode() == GameMode.CREATIVE) return;
         if (!permissionCheck(p, "testServ.Break")) {
             e.setCancelled(true);
             if (listPlaceOne.contains(p.getName())) {
