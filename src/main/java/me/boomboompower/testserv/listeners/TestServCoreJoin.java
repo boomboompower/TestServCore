@@ -55,7 +55,7 @@ public class TestServCoreJoin implements Listener {
         sendHeaderAndFooter("&cWelcome to &4&lTESTSERV", "&bOwner &f: &9boomboompower", p);
         sendActionBar("&4&lWelcome to the server! &c&l" + p.getName() + "!", p);
         sendChatMessage("&4&lWelcome to the server! &c&l" + p.getName() + "!", p);
-        sendChatMessage("&aYou last played: &3" + lastPlayed + "!");
+        sendChatMessage("&aYou last played: &3" + lastPlayed + "&a seconds ago!");
     }
 
     private void sendToSpawn(final Player player, int time) {
