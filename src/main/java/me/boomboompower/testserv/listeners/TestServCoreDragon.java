@@ -7,25 +7,30 @@ package me.boomboompower.testserv.listeners;
 
 import me.boomboompower.testserv.TestServCore;
 
+import org.bukkit.entity.Entity;
 import org.bukkit.event.Listener;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
-import org.bukkit.event.entity.EntityExplodeEvent;
+import org.bukkit.event.entity.EnderDragonChangePhaseEvent;
 
+import static me.boomboompower.testserv.utils.Utils.*;
 import static me.boomboompower.testserv.utils.Register.*;
 
-public class TestServCoreExplosions implements Listener {
+public class TestServCoreDragon implements Listener {
 
     private TestServCore testServCore;
 
-    public TestServCoreExplosions(TestServCore testServCore) {
+    public TestServCoreDragon(TestServCore testServCore) {
         this.testServCore = testServCore;
 
         registerEvents(this);
     }
 
     @EventHandler(priority = EventPriority.HIGH)
-    private void onEntityExplode(EntityExplodeEvent event) {
-        event.blockList().clear();
+    private void onDragonPhaseChange(EnderDragonChangePhaseEvent event) {
+        Entity e = event.getEntity();
+
+        e.setCustomName(translate("&5&lThe almighty EnderDragon"));
+        e.setCustomNameVisible(true);
     }
 }

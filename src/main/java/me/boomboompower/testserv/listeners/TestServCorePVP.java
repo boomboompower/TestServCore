@@ -2,18 +2,20 @@ package me.boomboompower.testserv.listeners;
 
 /*
 * Made for TestServ Core
-* by boomboompower 26/04/2016
+* by boomboompower 27/04/2016
 */
 
 import me.boomboompower.testserv.TestServCore;
 
-import org.bukkit.Bukkit;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.potion.PotionEffectType;
+import org.bukkit.util.NumberConversions;
 
+import static me.boomboompower.testserv.utils.Register.registerEvents;
 import static me.boomboompower.testserv.utils.Utils.*;
 
 public class TestServCorePVP implements Listener {
@@ -21,7 +23,9 @@ public class TestServCorePVP implements Listener {
     private TestServCore testServCore;
 
     public TestServCorePVP(TestServCore testServCore) {
-        Bukkit.getPluginManager().registerEvents(this, testServCore);
+        this.testServCore = testServCore;
+
+        registerEvents(this);
     }
 
     @EventHandler
@@ -33,8 +37,13 @@ public class TestServCorePVP implements Listener {
             Player aDamage = (Player) entity;
             Player aDamager = (Player) damager;
 
-            sendToPlayer(aDamage, "&cYou were damaged by &4" + aDamager.getName() + "&c for &4" + e.getDamage() + "&c!");
-            sendToPlayer(aDamager, "&aYou damaged &3" + aDamage.getName() + "&a for &3" + e.getDamage() + "7a!");
+            aDamage.addPotionEffect(PotionEffectType.DAMAGE_RESISTANCE.createEffect(3, 2));
+            aDamager.addPotionEffect(PotionEffectType.INCREASE_DAMAGE.createEffect(3, 1));
+
+            sendToPlayer(aDamage, "&cYou were damaged by &4" + aDamager.getName() + "&c for &4" + NumberConversions.ceil(e.getDamage()) + "&c!");
+            sendToPlayer(aDamager, "&aYou damaged &3" + aDamage.getName() + "&a for &3" + NumberConversions.ceil(e.getDamage()) + "a!");
         }
     }
+
+
 }

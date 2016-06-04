@@ -7,35 +7,47 @@ package me.boomboompower.testserv.listeners;
 
 import me.boomboompower.testserv.TestServCore;
 
-import org.bukkit.Bukkit;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.hanging.HangingBreakEvent;
 import org.bukkit.event.hanging.HangingPlaceEvent;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import static me.boomboompower.testserv.utils.Register.registerEvents;
 import static me.boomboompower.testserv.utils.Utils.*;
 
 public class TestServCorePaintings implements Listener {
 
     private TestServCore testServCore;
 
-    private ArrayList one;
-    private ArrayList two;
+    private ArrayList<String> one;
+    private ArrayList<String> two;
 
     public TestServCorePaintings(TestServCore testServCore) {
         this.testServCore = testServCore;
-        this.one = new ArrayList();
-        this.two = new ArrayList();
+        this.one = new ArrayList<String>();
+        this.two = new ArrayList<String>();
 
-        Bukkit.getPluginManager().registerEvents(this, testServCore);
+        registerEvents(this);
     }
 
+    @EventHandler
     private void hangingBreakEvent(HangingBreakEvent e) {
         e.setCancelled(true);
+        List<Entity> entityList = e.getEntity().getNearbyEntities(5D, 5D, 5D);
+
+        if (entityList instanceof Player) {
+            Player player = (Player) entityList;
+
+            sendToPlayer(player, "&c&lPaintings: &4I am invulnerable!");
+        }
     }
 
+    @EventHandler
     private void hangingPlaceEvent(HangingPlaceEvent e) {
         Player p = e.getPlayer();
         if (!permissionCheck(p, "TestServ.Paintings.Place")) {

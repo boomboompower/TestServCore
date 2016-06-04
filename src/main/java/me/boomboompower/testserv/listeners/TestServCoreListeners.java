@@ -2,7 +2,7 @@ package me.boomboompower.testserv.listeners;
 
 /*
 * Made for TestServ Core
-* by boomboompower 26/04/2016
+* by boomboompower 27/04/2016
 */
 
 import me.boomboompower.testserv.TestServCore;
@@ -16,9 +16,21 @@ public class TestServCoreListeners {
 
         new TestServCoreBlockHandler(testServCore);
         new TestServCoreMobSpawning(testServCore);
+        new TestServCorePlayerDeath(testServCore);
+        // new TestServCorePlayerItems(testServCore); // DOESN'T WORK!
+        new TestServCoreProjectiles(testServCore);
+        new TestServCorePlayerMove(testServCore);
         new TestServCoreExplosions(testServCore);
         new TestServCorePaintings(testServCore);
+        new TestServCoreFurnaces(testServCore);
+        new TestServCoreMobDeath(testServCore);
+        // new TestServCoreVehicles(testServCore); // - DOESN'T WORK!
+        new TestServCorePortals(testServCore);
+        new TestServCoreDragon(testServCore);
+        new TestServCoreSigns(testServCore);
+        new TestServCoreMaps(testServCore);
         new TestServCoreJoin(testServCore);
+        new TestServCoreFire(testServCore);
         new TestServCoreQuit(testServCore);
         new TestServCorePing(testServCore);
         new TestServCoreSwap(testServCore);

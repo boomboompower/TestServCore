@@ -6,9 +6,9 @@ package me.boomboompower.testserv.commands;
 */
 
 /**
-* Please note, this is in BETA stages, and any
-* help given would be greatly appreciated 
-*/
+ * Please note, this is in BETA stages, and any
+ * help given would be greatly appreciated 
+ */
 
 import me.boomboompower.testserv.TestServCore;
 
@@ -18,6 +18,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.*;
 
+import static me.boomboompower.testserv.utils.Register.*;
 import static me.boomboompower.testserv.utils.Utils.*;
 
 public class TestServCoreRemove implements CommandExecutor {
@@ -29,9 +30,10 @@ public class TestServCoreRemove implements CommandExecutor {
     public TestServCoreRemove(TestServCore testServCore) {
         this.testServCore = testServCore;
 
-        testServCore.getCommand(command).setExecutor(this);
+        registerCommands(command, this);
     }
 
+    @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         if (cmd.getName().equalsIgnoreCase(command)) {
             if (sender instanceof Player) {
@@ -46,8 +48,26 @@ public class TestServCoreRemove implements CommandExecutor {
                         } else if (entityTest("slime", args)) {
                             if (entity instanceof Slime) entity.remove();
 
+                        } else if (entityTest("skeleton", args)) {
+                            if (entity instanceof Skeleton) entity.remove();
+
+                        } else if (entityTest("creeper", args)) {
+                            if (entity instanceof Creeper) entity.remove();
+
                         } else if (entityTest("zombie", args)) {
                             if (entity instanceof Zombie) entity.remove();
+
+                        } else if (entityTest("enderman", args)) {
+                            if (entity instanceof Enderman) entity.remove();
+
+                        } else if (entityTest("wither", args)) {
+                            if (entity instanceof Wither) entity.remove();
+
+                        } else if (entityTest("all", args)) {
+                            if (!(entity instanceof Player)) entity.remove();
+
+                        } else {
+                            sendToPlayer(p, "&cUnknown entity &4(Or Not supported yet)&c.");
                         }
                     }
                 }
@@ -64,8 +84,17 @@ public class TestServCoreRemove implements CommandExecutor {
                     } else if (entityTest("creeper", args)) {
                         if (entity instanceof Creeper) entity.remove();
 
-                    } else if (entityTest("", args)) {
+                    } else if (entityTest("zombie", args)) {
                         if (entity instanceof Zombie) entity.remove();
+
+                    } else if (entityTest("enderman", args)) {
+                        if (entity instanceof Enderman) entity.remove();
+
+                    } else if (entityTest("all", args)) {
+                        if (!(entity instanceof Player)) entity.remove();
+
+                    } else if (entityTest("player", args)) {
+                        if (entity instanceof Player) ((Player) entity).setHealth(0.0D);
 
                     } else {
                         sendToConsole("&cUnknown entity.");
@@ -77,10 +106,6 @@ public class TestServCoreRemove implements CommandExecutor {
     }
 
     private boolean entityTest(String entity, String[] args) {
-        if (args[0].equalsIgnoreCase(entity)) {
-            return true;
-        } else {
-            return false;
-        }
+        return args[0].equalsIgnoreCase(entity);
     }
 }

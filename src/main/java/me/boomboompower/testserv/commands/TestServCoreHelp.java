@@ -2,28 +2,32 @@ package me.boomboompower.testserv.commands;
 
 /*
 * Made for TestServ Core
-* by boomboompower 25/04/2016
+* by boomboompower 26/04/2016
 */
 
 import me.boomboompower.testserv.TestServCore;
+
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import static me.boomboompower.testserv.utils.Register.*;
 import static me.boomboompower.testserv.utils.Utils.*;
 
 public class TestServCoreHelp implements CommandExecutor {
 
     private TestServCore testServCore;
+
     private String command = "aHelp";
 
     public TestServCoreHelp(TestServCore testServCore) {
         this.testServCore = testServCore;
 
-        testServCore.getCommand(command).setExecutor(this);
+        registerCommands(command, this);
     }
 
+    @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         if (cmd.getName().equalsIgnoreCase(command)) {
             if (sender instanceof Player) {
@@ -38,13 +42,17 @@ public class TestServCoreHelp implements CommandExecutor {
                     } else if (args[0].equalsIgnoreCase("2")) {
                         helpPageHeader(p, "2/3");
                         sendToPlayer(p, "");
+                        helpPageFooter(p, defaultFooter());
                     } else if (args[0].equalsIgnoreCase("3")) {
                         helpPageHeader(p, "3/3");
                         sendToPlayer(p, "");
+                        helpPageFooter(p, defaultFooter());
                     } else if (args[0].equalsIgnoreCase("interactor")) {
                         helpPageHeader(p, "Interactor");
                         helpPageCommand(p, "interactor eject", "Eject yourself from an entity.");
-                        sendToPlayer(p, "");
+                        helpPageFooter(p, defaultFooter());
+                    } else if (args[0].equals("") || args[0].equals(" ")) {
+                        defaultHelpPage(p);
                     } else {
                         defaultHelpPage(p);
                     }
@@ -61,6 +69,10 @@ public class TestServCoreHelp implements CommandExecutor {
             }
         }
         return true;
+    }
+
+    private String defaultFooter() {
+        return translate("Try &c/help <command>&4&l for more info!");
     }
 
     private void helpPageHeader(CommandSender sender, String page) {
