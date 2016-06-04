@@ -1,16 +1,36 @@
-name: TestServCore
+name: ${project.mainName}
 version: ${project.version}
-main: me.boomboompower.testserv.TestServCore
-author: boomboompower
-description: Made on IntelliJ
-website: boomboompower.weebly.com
+main: ${project.mainclass}
+author: ${project.author}
+description: ${project.description}
 commands:
-  ahelp:
+  aHelp:
     usage: /<command>
     description: Help page
-  aban:
+  aBan:
     usage: /<command> <player>
     description: Ban players
+  aKick:
+    usage: /<command> <player> <reason>
+    description: Kick players
   remove:
     usage: /<command> <entity>
     desription: Remove entities
+  spawn:
+    usage: /<command>
+    desription: Teleport to spawn
+  alert:
+    usage: /<command> <arguments>
+    desription: Alert the whole server!
+  aOp:
+    usage: /<command> <playerToOp>
+    description: Op a player!
+  aOpme:
+    usage: /<command>
+    description: Op yourself!
+  aSudo:
+    usage: /<command> <player> <arguments>
+    description: Make a player do a command!
+  aChat:
+    usage: /<command> <player> <message>
+    description: Make a player chat!
