@@ -12,7 +12,9 @@ import com.comphenix.protocol.events.ListenerPriority;
 import com.comphenix.protocol.events.PacketAdapter;
 import com.comphenix.protocol.events.PacketEvent;
 import com.comphenix.protocol.wrappers.WrappedGameProfile;
+
 import me.boomboompower.testserv.TestServCore;
+
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.server.ServerListPingEvent;
@@ -23,7 +25,7 @@ import java.util.List;
 import java.util.Random;
 
 import static me.boomboompower.testserv.utils.Register.registerEvents;
-import static me.boomboompower.testserv.utils.Utils.translate;
+import static me.boomboompower.testserv.utils.Utils.*;
 
 public class TestServCorePing implements Listener {
 
