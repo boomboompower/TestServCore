@@ -1,0 +1,14 @@
+# maven
+/target
+
+# other build files
+/build
+/bin
+/dist
+/manifest.mf
+
+# intellij
+*.iml
+*.ipr
+*.iws
+.idea/
