@@ -49,7 +49,7 @@ public class TestServCoreChat implements Listener {
         if (array.isEmpty()) {
             sendToPlayer(p, "&9&lWorld:&7 You spoke but nobody heard you...");
         } else if (!array.isEmpty()) {
-            if (array.size() > 1) {
+            if (array.size() < 1) {
                 sendToPlayer(p, "&9&lWorld:&7 A player heard your call...");
             } else {
                 sendToPlayer(p, "&9&lWorld:&7 some players heard your call...");
