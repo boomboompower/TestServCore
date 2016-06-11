@@ -1,3 +1,12 @@
+# We say farewell to the github support for this project. We have moved this project over to Bitbucket located [here](https://bitbucket.org/boomboompower/testservcore/)
+### Reasons for this:
+* IntelliJ cannot upload code to github using built in features
+* Bitbucket has **unlimited** private repositories
+* There are more advanced systems on Bitbucket
+* Webhooks and services are easier to make on Bitbucket.
+
+-------------------
+
 ![Main icon](http://goo.gl/ByoYVf "Press here to fork me!")
 On travis the build is: [![Build Status](https://travis-ci.org/boomboompower/TestServCore.svg?branch=master)](https://travis-ci.org/boomboompower/TestServCore)
 
