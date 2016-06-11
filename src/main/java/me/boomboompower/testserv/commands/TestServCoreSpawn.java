@@ -1,15 +1,17 @@
 package me.boomboompower.testserv.commands;
 
 /*
-* Made for TestServ Core
+* Made for TestServCore
 * by boomboompower 25/04/2016
+*
+* THIS CODE IS OUTDATED
 */
 
 import me.boomboompower.testserv.TestServCore;
 
 import org.bukkit.Sound;
 import org.bukkit.Bukkit;
-import org.bukkit.entity.*;
+import org.bukkit.entity.Player;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.CommandExecutor;
