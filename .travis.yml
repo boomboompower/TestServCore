@@ -1,6 +1,5 @@
 language: java
 
-# Stop me getting spam emails.
+# Stop me getting spam emails
 notifications:
-  email:
-    on_failure: change
+  email: false
