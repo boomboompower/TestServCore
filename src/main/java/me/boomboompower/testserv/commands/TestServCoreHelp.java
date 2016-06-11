@@ -1,8 +1,10 @@
 package me.boomboompower.testserv.commands;
 
 /*
-* Made for TestServ Core
+* Made for TestServCore
 * by boomboompower 26/04/2016
+*
+* THIS CODE IS OUTDATED
 */
 
 import me.boomboompower.testserv.TestServCore;
