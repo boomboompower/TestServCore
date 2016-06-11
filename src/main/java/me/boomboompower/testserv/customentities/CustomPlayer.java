@@ -3,6 +3,8 @@ package me.boomboompower.testserv.customentities;
 /*
 * Made for TestServCore
 * by boomboompower 07/05/2016
+*
+* THIS CODE IS OUTDATED
 */
 
 import org.bukkit.Bukkit;
