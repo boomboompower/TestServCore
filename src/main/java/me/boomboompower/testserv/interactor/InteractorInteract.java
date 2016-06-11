@@ -5,6 +5,8 @@ package me.boomboompower.testserv.interactor;
  * A separate plugin by boomboompower
  * <p>
  * http://github.com/boomboompower/Interactor/
+ * 
+ * THIS CODE IS OUTDATED
  */
 
 import me.boomboompower.testserv.TestServCore;
