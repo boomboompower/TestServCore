@@ -5,6 +5,8 @@ package me.boomboompower.testserv.throwingtnt;
  * A separate plugin by boomboompower
  *
  * http://github.com/boomboompower/ThrowingTNT/
+ *
+ * THIS CODE IS OUTDATED
  */
 
 import me.boomboompower.testserv.TestServCore;

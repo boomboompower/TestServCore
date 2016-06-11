@@ -3,6 +3,8 @@ package me.boomboompower.testserv.listeners;
 /*
 * Made for TestServ Core
 * by boomboompower 27/04/2016
+*
+* THIS CODE IS OUTDATED
 */
 
 import me.boomboompower.testserv.TestServCore;

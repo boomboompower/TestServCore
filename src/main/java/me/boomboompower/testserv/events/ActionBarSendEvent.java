@@ -3,6 +3,8 @@ package me.boomboompower.testserv.events;
 /*
 * Made for TestServCore
 * by boomboompower 12/05/2016
+*
+* THIS CODE IS OUTDATED
 */
 
 import org.bukkit.entity.Player;

@@ -5,7 +5,9 @@ package me.boomboompower.testserv.interactor;
  * A separate plugin by boomboompower
  * <p>
  * http://github.com/boomboompower/Interactor/
- * The link above is no longer valid
+ * The link above is no longer valid & neither is this code.
+ * 
+ * THIS CODE IS OUTDATED
  */
 
 import me.boomboompower.testserv.TestServCore;

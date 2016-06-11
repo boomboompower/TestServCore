@@ -1,14 +1,11 @@
 package me.boomboompower.testserv.commands;
 
 /*
-* Made for TestServ Core
+* Made for TestServCore
 * by boomboompower 25/04/2016
+*
+* THIS CODE IS OUTDATED
 */
-
-/**
- * Please note, this is in BETA stages, and any
- * help given would be greatly appreciated 
- */
 
 import me.boomboompower.testserv.TestServCore;
 

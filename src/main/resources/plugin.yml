@@ -1,4 +1,4 @@
-name: ${project.mainName}
+name: ${project.mainName}-Outdated
 version: ${project.version}
 main: ${project.mainclass}
 author: ${project.author}

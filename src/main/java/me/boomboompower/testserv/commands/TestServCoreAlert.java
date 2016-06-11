@@ -3,6 +3,8 @@ package me.boomboompower.testserv.commands;
 /*
 * Made for TestServ Core
 * by boomboompower 25/04/2016
+*
+* THIS CODE IS OUTDATED
 */
 
 import me.boomboompower.testserv.TestServCore;
